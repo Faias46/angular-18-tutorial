@@ -1,0 +1,57 @@
+<!-- //bootstrap use and we can doing data binding examples -->
+
+<div class="row">
+  <div class="col-4">one way - from .ts to .html</div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+
+
+<div class="row">
+  <div class="col-4">
+    interpolation
+    <div class="row">
+      <div class="col-4 bg-success">
+        interpolation
+        <h4>{{ courseName }}</h4>
+        <div>{{ inputType }}</div>
+        <input type="text" value="{{ courseName }}" placeholder="enter your name" />
+        <input type="{{ inputType }}" />
+      </div>
+
+      <div class="col-4">
+        property binding
+        <div [class]="myClassName">danger</div>
+        <input type="text" [value]="courseName"/>
+        <input [type]="inputType"  />
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+      <button class="btn btn-success" (click)="showMessage()">show welcome</button>
+      <button class="btn btn-warning" (click)="showAlert('iam learning the concept as data binding')">angular</button>
+        <button class="btn btn-success" (click)="changecourseName()">change name</button>  
+       <!-- data binding not working in updating the name in one way data binding to solve this we can use two way data binding -->
+  </div>
+  <div class="col-4">
+    <input type="text" [(ngModel)]="courseName" />------{{ courseName }}
+    
+    
+  </div>
+  <div class="col-6">
+    <h2>{{firstName()}}</h2>
+</div>
+</div>
+
+<div>
+  <input type="text" value="{{stateName}}">
+    <select [(ngModel)]="stateName">
+        <option value="">select</option>
+        <option value="maharashtra">maharashtra</option>
+        <option value="goa">goa</option>
+        <option value="bengaluru">bengaluru</option>
+    </select>
+</div>
+
+
+
