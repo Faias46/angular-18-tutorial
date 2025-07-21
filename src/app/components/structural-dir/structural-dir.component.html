@@ -1,0 +1,130 @@
+<!-- Section: Header -->
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>Structural Directive</h1>
+  <p>*ngIf, *ngFor ......</p>
+</div>
+
+<!-- Section: Four Divs Based on Conditions -->
+<div class="row pt-3">
+
+  <!-- Div-1: Shown when isDiv1Visible is true -->
+  <div class="col-3">
+    <div *ngIf="isDiv1Visible" class="bg-danger p-3 text-center">
+      <h4>Div-1</h4>
+    </div>
+  </div>
+
+  <!-- Div-2: Shown when isDiv2visible is true -->
+  <div class="col-3">
+    <div class="bg-success p-3 text-center" *ngIf="isDiv2visible">
+      <h4>Div-2</h4>
+    </div>
+  </div>
+
+  <!-- Div-3: Shown only when num1 equals num2 -->
+  <div class="col-3">
+    <div class="bg-secondary p-3 text-center" *ngIf="num1 == num2">
+      <h4>Div-3</h4>
+    </div>
+  </div>
+
+  <!-- Div-4: Shown when selectedState equals 'USA' -->
+  <div class="col-3">
+    <div class="bg-primary p-3 text-center" *ngIf="selectedState == 'USA'">
+      <h4>Div-4</h4>
+    </div>
+  </div>
+
+  <!-- Control Buttons and Inputs -->
+  <div class="row pt-3">
+
+    <!-- Buttons for Show/Hide -->
+    <div class="col-3 text-center">
+      <!-- Hide Div-2 -->
+      <button class="btn btn-danger" (click)="hideDiv2()">Hide</button>
+      <!-- Show Div-1 -->
+      <button class="btn btn-primary mx-2" (click)="showDiv1()">Show</button>
+    </div>
+
+    <!-- Toggle Div-2 -->
+    <div class="col-3 text-center">
+      <button class="btn btn-success" (click)="togglediv2()">Toggle</button>
+    </div>
+
+    <!-- Input fields to compare num1 and num2 -->
+    <div class="col-3">
+      <div style="display:flex; align-items: center;">
+        <input type="text" placeholder="num-1" class="width-50" [(ngModel)]="num1">
+        <input type="text" placeholder="num-2" class="width-50" [(ngModel)]="num2">
+      </div>
+    </div>
+
+    <!-- Checkbox and Select to control Div-4 -->
+    <div class="col-3">
+      <div style="display: flex; align-items: center;">
+        <!-- Optional checkbox binding example -->
+        <input type="checkbox" class="width-50" [(ngModel)]="isActive">
+
+        <!-- Select dropdown to choose state -->
+        <select [(ngModel)]="selectedState">
+          <option value="">Select State</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Shrilanka">Shrilanka</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ul>
+    </div>
+
+     <div class="col-3">
+        <div *ngFor="let cityName of cityArray">{{cityName}}</div>
+    </div>
+
+     <div class="col-3">
+        <select>
+            <option *ngFor="let cities of cityArray">{{cities}}</option>
+        </select> 
+    </div>
+
+    <div class="col-3">
+        <select>
+            <option *ngFor="let stud of studentList" [value]="stud.studId">{{stud.name}}</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>sr no</th>
+                    <th>name</th>
+                    <th>city</th>
+                    <th>status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let student of studentList;let srno=index">
+                    <td>{{srno +1}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.city}}</td>
+                    <td>
+                        <span *ngIf="isActive">active</span>
+                        <span *ngIf="!isActive">inactive</span>
+                    </td>   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
