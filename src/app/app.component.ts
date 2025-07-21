@@ -4,12 +4,13 @@ import { Component } from '@angular/core';
 // import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 // import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { StructuralDirComponent } from './components/structural-dir/structural-dir.component';
+import { AttributeDirectiveComponent } from './components/attribute-directive/attribute-directive.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-   imports: [//RouterOutlet,EmployeeListComponent,AddEmployeeComponent,DataBindingComponent,
-    StructuralDirComponent],
+   imports: [//RouterOutlet,EmployeeListComponent,AddEmployeeComponent,DataBindingComponent,StructuralDirComponent,
+    AttributeDirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,146 @@
+<!-- Section: Header -->
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>Structural Directive</h1>
+  <p>[ngClass] [ngStyle] ......</p> <!-- Mentioning Angular attribute directives -->
+</div>
+
+<!-- Section: Four Divs Based on Conditions -->
+<div class="row pt-3">
+
+  <!-- Div-1: Uses dynamic class from component variable -->
+  <div class="col-3">
+    <div class="p-3 text-center" [ngClass]="div1bgcolor">
+      <h4>Div-1</h4>
+    </div>
+  </div>
+
+  <!-- Div-2: Changes color based on isDiv2Active boolean -->
+  <div class="col-3">
+    <div class="p-3 text-center" [ngClass]="isDiv2Active == true ? 'bg-success' : 'bg-warning'">
+      <h4>Div-2</h4>
+    </div>
+  </div>
+
+  <!-- Div-3: Compares num1 and num2 to determine styling -->
+  <div class="col-3">
+    <div class="p-3 text-center" [ngClass]="num1 == num2 ? 'bg-secondary text-white' : 'bg-warning text-primary'">
+      <h4>Div-3</h4>
+    </div>
+  </div>
+
+  <!-- Div-4: Uses isActive boolean to apply class -->
+  <div class="col-3">
+    <div class="p-3 text-center" [ngClass]="isActive ? 'bg-primary' : ''">
+      <h4>Div-4</h4>
+    </div>
+  </div>
+
+  <!-- Section: Control Buttons and Inputs -->
+  <div class="row pt-3">
+
+    <!-- Buttons to change color of Div-1 -->
+    <div class="col-3 text-center">
+      <button class="btn btn-danger" (click)="addRedclass()">Add red</button>
+      <button class="btn btn-primary mx-2" (click)="addBlueclass()">Add blue</button>
+    </div>
+
+    <!-- Button to toggle Div-2 class -->
+    <div class="col-3 text-center">
+      <button class="btn btn-success" (click)="toggleDiv2class()">Toggle</button>
+    </div>
+
+    <!-- Input fields for comparing num1 and num2 -->
+    <div class="col-3">
+      <div style="display:flex; align-items: center;">
+        <input type="text" placeholder="num-1" class="width-50" [(ngModel)]="num1">
+        <input type="text" placeholder="num-2" class="width-50" [(ngModel)]="num2">
+      </div>
+    </div>
+
+    <!-- Checkbox to bind isActive, and a select dropdown (not yet bound) -->
+    <div class="col-3">
+      <div style="display: flex; align-items: center;">
+        <input type="checkbox" class="width-50" [(ngModel)]="isActive">
+        <!-- NOTE: This select is missing [(ngModel)] binding -->
+        <select>
+          <option value="">Select State</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Shrilanka">Shrilanka</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Empty placeholder section for list and dropdown examples -->
+<div class="row">
+  <div class="col-3">
+    <ul>
+      <li></li> <!-- Placeholder for *ngFor item -->
+    </ul>
+  </div>
+
+  <div class="col-3">
+    <div></div> <!-- Placeholder for *ngFor div -->
+  </div>
+
+  <div class="col-3">
+    <select>
+      <option></option> <!-- Placeholder for *ngFor -->
+    </select> 
+  </div>
+
+  <div class="col-3">
+    <select>
+      <option></option> <!-- Placeholder for *ngFor -->
+    </select>
+  </div>
+</div>
+
+<!-- Section: Student Table with Styling and Progress Bars -->
+<div class="row">
+  <div class="col-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Status</th>
+          <th>Gender</th>
+          <th>Total Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stud of studentList">
+          <td>{{stud.name}}</td>
+          <td>{{stud.city}}</td>
+
+          <!-- Style status background dynamically -->
+          <td [ngStyle]="{'background-color': stud.isActive ? 'yellow':'red'}">
+            <span>{{stud.isActive ? 'active' : 'de active'}}</span>
+          </td>
+
+          <td>{{stud.gender}}</td>
+
+          <!-- Show total marks as progress bar -->
+          <td>
+            <div class="progress">
+              <div class="progress-bar" [ngStyle]="{'width': stud.totalmarks + '%'}">
+                {{stud.totalmarks}}
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section: Custom styled div using ngStyle -->
+  <div class="col-5">
+    <div [ngStyle]="customerStyle">
+      Div test
+    </div>
+  </div>
+</div>
