@@ -6,14 +6,17 @@ import { Component } from '@angular/core';
 //import { StructuralDirComponent } from './components/directives/structural-dir/structural-dir.component';
 //import { AttributeDirectiveComponent } from './components/directives/attribute-directive/attribute-directive.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { IfelseComponent } from "./components/control flow/ifelse/ifelse.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-   imports: [//RouterOutlet,EmployeeListComponent,AddEmployeeComponent,DataBindingComponent,
-   // StructuralDirComponent,
+   imports: [
+    // StructuralDirComponent,
     //AttributeDirectiveComponent
-  RouterOutlet,RouterLink],
+    RouterOutlet, RouterLink,
+    // IfelseComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

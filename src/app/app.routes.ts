@@ -4,6 +4,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { StructuralDirComponent } from './components/directives/structural-dir/structural-dir.component';
 import { AttributeDirectiveComponent } from './components/directives/attribute-directive/attribute-directive.component';
+import { IfelseComponent } from './components/control flow/ifelse/ifelse.component';
 
 export const routes: Routes = [
     {
@@ -24,10 +25,20 @@ export const routes: Routes = [
     },
     {
         path:'attribute-dir',
-        component:AttributeDirectiveComponent
+        component:AttributeDirectiveComponent,
     },
+    {
+        path:'ifelse',
+        component:IfelseComponent
+    }
+
+
+
+
+
     // {
     //     path: '',
     //     redirectTo: 'emp-list',
     // }
+
 ];
