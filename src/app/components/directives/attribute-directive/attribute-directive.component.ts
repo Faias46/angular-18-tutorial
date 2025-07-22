@@ -2,12 +2,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 // Define the component metadata
 @Component({
   selector: 'app-attribute-directive',              // Selector used in HTML to render this component
   standalone: true,                                 // Enables this component to be used without being declared in a module
-  imports: [CommonModule, FormsModule],             // Importing required modules like CommonModule and FormsModule
+  imports: [CommonModule, FormsModule,RouterLink],             // Importing required modules like CommonModule and FormsModule
   templateUrl: './attribute-directive.component.html', // External HTML template
   styleUrl: './attribute-directive.component.css'      // External CSS file
 })

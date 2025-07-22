@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-structural-dir',                      // Selector for this component
   standalone: true,                                   // Standalone component declaration
-  imports: [CommonModule, FormsModule],               // Importing required modules for template binding
+  imports: [CommonModule, FormsModule,RouterLink],               // Importing required modules for template binding
   templateUrl: './structural-dir.component.html',     // HTML template file
   styleUrl: './structural-dir.component.css'          // CSS styling file
 })
