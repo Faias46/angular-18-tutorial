@@ -5,6 +5,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { StructuralDirComponent } from './components/directives/structural-dir/structural-dir.component';
 import { AttributeDirectiveComponent } from './components/directives/attribute-directive/attribute-directive.component';
 import { IfelseComponent } from './components/control flow/ifelse/ifelse.component';
+import { ForComponent } from './components/control flow/for/for.component';
 
 export const routes: Routes = [
     {
@@ -30,6 +31,10 @@ export const routes: Routes = [
     {
         path:'ifelse',
         component:IfelseComponent
+    },
+    {
+        path:'for',
+        component:ForComponent
     }
 
 
