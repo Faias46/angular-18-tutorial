@@ -6,6 +6,7 @@ import { StructuralDirComponent } from './components/directives/structural-dir/s
 import { AttributeDirectiveComponent } from './components/directives/attribute-directive/attribute-directive.component';
 import { IfelseComponent } from './components/control flow/ifelse/ifelse.component';
 import { ForComponent } from './components/control flow/for/for.component';
+import { PipeComponent } from './components/pipe/pipe.component';
 
 export const routes: Routes = [
     {
@@ -35,6 +36,9 @@ export const routes: Routes = [
     {
         path:'for',
         component:ForComponent
+    },{
+        path:'pipe',
+        component:PipeComponent
     }
 
 
