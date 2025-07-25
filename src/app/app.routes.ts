@@ -7,6 +7,9 @@ import { AttributeDirectiveComponent } from './components/directives/attribute-d
 import { IfelseComponent } from './components/control flow/ifelse/ifelse.component';
 import { ForComponent } from './components/control flow/for/for.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
+import { GetApiComponent } from './components/api integration/get-api/get-api.component';
+import { PostApiComponent } from './components/api integration/post-api/post-api.component';
 
 export const routes: Routes = [
     {
@@ -39,6 +42,18 @@ export const routes: Routes = [
     },{
         path:'pipe',
         component:PipeComponent
+    },
+    {
+        path:'reactive-forms',
+        component:ReactiveFormsComponent
+    },
+    {
+        path:'get-api',
+        component:GetApiComponent
+    },
+    {
+        path:'post-api',
+        component:PostApiComponent
     }
 
 
